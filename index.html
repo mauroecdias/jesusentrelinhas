@@ -5,55 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Links da Bio</title>
     <style>
-      ody {
+     html, body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    /* Removemos o fundo daqui para evitar o redimensionamento */
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Mata o scroll lateral de vez */
+    position: fixed;    /* Impede que a página "balance" no celular */
 }
 
 body::before {
     content: "";
-    position: fixed; /* Trava a imagem na tela */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    /* Substitua pelo nome da sua imagem */
-    background: url('fundo.png') no-repeat center center;
+    width: 100vw; /* Usa a largura da janela de visualização */
+    height: 100vh; /* Usa a altura da janela de visualização */
+    background: url('fundo.jpg') no-repeat center center;
     background-size: cover;
-    z-index: -1; /* Joga a imagem para trás de tudo */
-    will-change: transform; /* Ajuda na performance do celular */
+    z-index: -1;
+    /* Força o navegador a não redimensionar a imagem */
+    background-attachment: scroll; 
 }
 
-       .container {
+.container {
+    position: absolute; /* Permite posicionar sobre o fundo fixo */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Centralização perfeita */
     width: 100%;
     max-width: 400px;
-    text-align: center;
-    padding: 20px;
-    
-    /* AQUI ESTÁ O SEGREDO: */
-    margin-top: 50vh; /* Isso empurra os botões para 50% da altura da tela */
-    /* Você pode trocar 50vh por 300px se preferir uma medida fixa */
+    height: 100%;
+    overflow-y: auto; /* Permite rolar os botões se eles forem muitos, sem mexer o fundo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50vh; /* Ajuste aqui para descer os botões */
+    box-sizing: border-box; /* Garante que o padding não estique a largura */
 }
 
-        .link-button {
-    display: block;
-    margin: 0 auto 15px auto; /* Centraliza o botão e dá espaço entre eles */
-    text-decoration: none;
-    width: 65%; /* Ajusta a largura dos botões dentro do container */
+.link-button {
+    width: 70%;
+    margin-bottom: 15px;
+    flex-shrink: 0; /* Impede que o botão seja esmagado */
 }
 
 .link-button img {
     width: 100%;
     height: auto;
-    display: block;
-    margin: 0 auto; /* Garante que a imagem do botão esteja centrada */
 }
-
-        .link-button:hover {
-            transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
-        }
       .frase-destaque {
     background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente */
     color: #333;                               /* Cor do texto */
