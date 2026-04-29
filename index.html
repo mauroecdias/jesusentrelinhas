@@ -5,19 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Links da Bio</title>
     <style>
-        body {
-            /* Substitua 'fundo.jpg' pelo nome do seu arquivo de imagem */
-            background: url('fundo.png') no-repeat center center fixed;
-            background-size: cover;
-            font-family: Arial, sans-serif;
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-          min-height: 100vh;
-        }
+      ody {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    /* Removemos o fundo daqui para evitar o redimensionamento */
+}
+
+body::before {
+    content: "";
+    position: fixed; /* Trava a imagem na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Substitua pelo nome da sua imagem */
+    background: url('fundo.png') no-repeat center center;
+    background-size: cover;
+    z-index: -1; /* Joga a imagem para trás de tudo */
+    will-change: transform; /* Ajuda na performance do celular */
+}
 
        .container {
     width: 100%;
@@ -26,7 +33,7 @@
     padding: 20px;
     
     /* AQUI ESTÁ O SEGREDO: */
-    margin-top: 55vh; /* Isso empurra os botões para 50% da altura da tela */
+    margin-top: 50vh; /* Isso empurra os botões para 50% da altura da tela */
     /* Você pode trocar 50vh por 300px se preferir uma medida fixa */
 }
 
