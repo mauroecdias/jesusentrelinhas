@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links da Bio</title>
+    <style>
+        body {
+            /* Substitua 'fundo.jpg' pelo nome do seu arquivo de imagem */
+            background: url('fundo.png') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+          min-height: 100vh;
+        }
+
+       .container {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    padding: 20px;
+    
+    /* AQUI ESTÁ O SEGREDO: */
+    margin-top: 55vh; /* Isso empurra os botões para 50% da altura da tela */
+    /* Você pode trocar 50vh por 300px se preferir uma medida fixa */
+}
+
+        .link-button {
+    display: block;
+    margin: 0 auto 15px auto; /* Centraliza o botão e dá espaço entre eles */
+    text-decoration: none;
+    width: 70%; /* Ajusta a largura dos botões dentro do container */
+}
+
+.link-button img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Garante que a imagem do botão esteja centrada */
+}
+
+        .link-button:hover {
+            transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+        }
+      .frase-destaque {
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente */
+    color: #333;                               /* Cor do texto */
+    padding: 10px 20px;                        /* Espaço interno */
+    border-radius: 20px;                       /* Bordas arredondadas */
+    font-weight: bold;                         /* Negrito */
+    margin-bottom: 20px;                       /* Espaço para os botões */
+    display: inline-block;                     /* Ajusta o fundo ao tamanho do texto */
+}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+      <p class="frase-destaque">Escolha onde ouvir e acompanhe o podcast Jesus Entre Linhas</p>
+        <!-- Adicione aqui seus links e as imagens dos botões -->
+        
+        <a href="https://www.deezer.com/br/show/1002892271" class="link-button">
+            <img src="spotify.png" alt="">
+        </a>
+
+        <a href="https://open.spotify.com/show/1lsiaZFPzBaf5tg7DKqqXq?si=T9fbz4jdSnOylK8ii6SG1Q" class="link-button">
+            <img src="deezer.png" alt="">
+        </a>
+
+        <a href="https://music.amazon.com.br/podcasts/cc2dfb5a-50a7-481a-833d-5d99e42d06f3/jesus-entre-linhas" class="link-button">
+            <img src="amazon.png" alt="">
+        </a>
+
+    </div>
+
+</body>
+</html>
